@@ -20,6 +20,8 @@ namespace AddressBook
             AddressBook.addAddressBook();
             Console.WriteLine("\n");
             AddressBook.ContactsDisplay();
+            AddressBook.PersonSearch();
+
         }
     }
 }

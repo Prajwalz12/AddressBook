@@ -278,6 +278,33 @@ namespace AddressBook
 
                 Console.WriteLine("contact of the person {0} does not exist", deleteKey);
             }
+
+        }
+        public static void PersonSearch()
+        {
+            Dictionary<string, List<Contacts>> cityPersons = new Dictionary<string, List<Contacts>>();
+            Dictionary<string, List<Contacts>> statePerson = new Dictionary<string, List<Contacts>>();
+
+            Console.WriteLine("Enter the city that you want to search");
+            string cityKey = Console.ReadLine();
+            cityPersons[cityKey] = new List<Contacts>();
+            Console.WriteLine("Enter the state that you want to search");
+            string stateKey = Console.ReadLine();
+            statePerson[stateKey] = new List<Contacts>();
+            foreach (string addressBookName in mySystem.Keys)
+            {
+                foreach (Contacts contact in mySystem[addressBookName])
+                {
+                    if (cityKey.ToLower() == contact.city)
+                    {
+                        cityPersons[cityKey].Add(contact);
+                    }
+                    else if (stateKey.ToLower() == contact.state)
+                    {
+                        statePerson[stateKey].Add(contact);
+                    }
+                }
+            }
         }
     }
 }
