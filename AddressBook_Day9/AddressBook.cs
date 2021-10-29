@@ -135,5 +135,37 @@ namespace AddressBook
                 Console.WriteLine("Your address book is empty");
             }
         }
+
+        public static void DeleteContact()
+        {
+            Console.WriteLine("Enter the first name of the person whose contact you want to delete from the addressbook");
+            string deleteKey = Console.ReadLine();
+            int flag = 0;
+            if (addressBook.Count > 0)
+            {
+                foreach (Contacts contact in addressBook)
+                {
+                    if (deleteKey.ToLower() == contact.firstName.ToLower())
+                    {
+                        flag = 1;
+                        addressBook.Remove(contact);
+                        break;
+                    }
+                    else
+                    {
+
+                    }
+                }
+            }
+            else
+            {
+                Console.WriteLine("Your address book is empty");
+            }
+            if (flag == 0)
+            {
+
+                Console.WriteLine("contact of the person {0} does not exist", deleteKey);
+            }
+        }
     }
 }

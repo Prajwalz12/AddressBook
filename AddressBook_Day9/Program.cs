@@ -10,8 +10,14 @@ namespace AddressBook
 
             Contacts person = new Contacts();
             AddressBook.AddContact();
+            Console.WriteLine("\n");
             AddressBook.ContactsDisplay();
+            Console.WriteLine("\n");
             AddressBook.EditContact();
+            Console.WriteLine("\n");
+            AddressBook.ContactsDisplay();
+            Console.WriteLine("\n");
+            AddressBook.DeleteContact();
             AddressBook.ContactsDisplay();
         }
     }
