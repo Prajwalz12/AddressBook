@@ -1,5 +1,4 @@
-﻿using AddressBook_Day9;
-using System;
+﻿using System;
 
 namespace AddressBook
 {
@@ -10,6 +9,8 @@ namespace AddressBook
             Console.WriteLine("Hello Welcome To AddressBook Management");
 
             Contacts person = new Contacts();
+            AddressBook.AddContact();
+            AddressBook.ContactsDisplay();
         }
     }
 }
