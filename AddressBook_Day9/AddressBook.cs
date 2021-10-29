@@ -15,7 +15,8 @@ namespace AddressBook
             int count = Convert.ToInt32(Console.ReadLine());
             while (count > 0)
             {
-                Console.WriteLine("Do you want to add the contact in the existing addressbook or new addressbook\n Enter the number accordingly\n 1. New addressbook\n 2. Existing addressbook");
+                Console.WriteLine("Do you want to add the contact in the existing addressbook or new addressbook" +
+                    "\n Enter the number accordingly\n 1. New addressbook\n 2. Existing addressbook");
                 int key = Convert.ToInt32(Console.ReadLine());
                 if (key == 1)
                 {
@@ -74,7 +75,8 @@ namespace AddressBook
                 }
                 else
                 {
-                    Console.WriteLine("The name {0} already  exist in the current address book. please enter a new name", firstName);
+                    Console.WriteLine("The name {0} already  exist in the current address book. " +
+                        "please enter a new name", firstName);
                     goto firstName;
                 }
 
@@ -182,7 +184,9 @@ namespace AddressBook
                     {
                         while (true)
                         {
-                            Console.WriteLine("Enter the key number for editing the details\n 1. First name\n 2. Last name\n 3. Address\n 4. City\n 5. State\n 6. Zipcode\n 7. Phone number\n 8. Email ID\n 9. Exit editor");
+                            Console.WriteLine("Enter the key number for editing the details\n 1. First name\n 2. Last name" +
+                                "\n 3. Address\n 4. City\n 5. State\n 6. Zipcode\n 7. Phone number\n 8. Email ID" +
+                                "\n 9. Exit editor");
                             int key = Convert.ToInt32(Console.ReadLine());
                             switch (key)
                             {
@@ -278,8 +282,8 @@ namespace AddressBook
 
                 Console.WriteLine("contact of the person {0} does not exist", deleteKey);
             }
-
         }
+
         public static void PersonSearch()
         {
             Dictionary<string, List<Contacts>> cityPersons = new Dictionary<string, List<Contacts>>();
@@ -304,6 +308,21 @@ namespace AddressBook
                         statePerson[stateKey].Add(contact);
                     }
                 }
+            }
+            PersonSearchDisplay(cityPersons, statePerson, cityKey, stateKey);
+        }
+
+        public static void PersonSearchDisplay(Dictionary<string, List<Contacts>> cityPersons, Dictionary<string, List<Contacts>> statePersons, string cityKey, string stateKey)
+        {
+            Console.WriteLine("------------------- Persons in {0} city-------------------------", cityKey);
+            foreach (Contacts contact in cityPersons[cityKey])
+            {
+                Console.WriteLine("{0}", contact.firstName);
+            }
+            Console.WriteLine("--------------------Persons in {0} state", stateKey);
+            foreach (Contacts contact in statePersons[stateKey])
+            {
+                Console.WriteLine("{0}", contact.firstName);
             }
         }
     }
