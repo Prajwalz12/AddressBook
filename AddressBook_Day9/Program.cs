@@ -9,9 +9,7 @@ namespace AddressBook
             Console.WriteLine("Hello Welcome To AddressBook Management");
 
             Contacts person = new Contacts();
-            AddressBook.AddContact();
-            Console.WriteLine("\n");
-            AddressBook.ContactsDisplay();
+
             Console.WriteLine("\n");
             AddressBook.EditContact();
             Console.WriteLine("\n");
@@ -19,6 +17,8 @@ namespace AddressBook
             Console.WriteLine("\n");
             AddressBook.DeleteContact();
             AddressBook.ContactsDisplay();
+            AddressBook.addAddressBook();
+            Console.WriteLine("\n");
         }
     }
 }
