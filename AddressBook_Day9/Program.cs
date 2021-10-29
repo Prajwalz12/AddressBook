@@ -19,6 +19,7 @@ namespace AddressBook
             AddressBook.ContactsDisplay();
             AddressBook.addAddressBook();
             Console.WriteLine("\n");
+            AddressBook.ContactsDisplay();
         }
     }
 }
