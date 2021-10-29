@@ -11,6 +11,8 @@ namespace AddressBook
             Contacts person = new Contacts();
             AddressBook.AddContact();
             AddressBook.ContactsDisplay();
+            AddressBook.EditContact();
+            AddressBook.ContactsDisplay();
         }
     }
 }
